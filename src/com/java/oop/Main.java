@@ -1,10 +1,13 @@
 package com.java.oop;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
         Product product1;
         Product product2;
         Product product3;
+        Product product4;
         product1 = new Product(1,"Lenovo", 48889.9F,5.1F, 2.5F, 2.5F, 700.50F, 70 );
         product1.displayProduct();
 
@@ -18,7 +21,7 @@ public class Main {
         System.out.printf("Shipping Charges    : %-4d%n", product2.shipmentCharges);
         System.out.printf("Final Product Price : %-4.2f%n", product2.finalProductPrice);
 
-        product3 = new Product(3,"HP", 699999.9F, 15.5F, 2.5F, 2.5F, 59999.9F, 80);
+        product3 = new Product(3,"HP", 69999.9F, 15.5F, 2.5F, 2.5F, 59999.9F, 80);
         product3.displayProduct();
 
         System.out.println("------------------------------------------------------------------------------------------------");
@@ -35,15 +38,14 @@ public class Main {
                 product3.id, product3.name, product3.maxRetailPrice, product3.stateTax, product3.centralTax, product3.discountPercentage, product3.shipmentCharges, product3.finalProductPrice
         );
 
-//        System.out.println("ID : " + product2.id);
-//        System.out.println("Name : " + product2.name);
-//        System.out.println("MRP : " + product2.maxRetailPrice);
-//        System.out.println("State Tax : " + product2.stateTax);
-//        System.out.println("Central Tax : " + product2.centralTax);
-//        System.out.println("Discount : " + product2.discountPercentage);
-//        System.out.println("Shipping Charges : " + product2.shipmentCharges);
-//        System.out.println("Final Product Price : " + product2.finalProductPrice);
-
+        product4 = new Product(4, "Acer", 79999, 15.5F, 2.5F, 2.5F, 90, 50 );
+        product4.displayProduct();
+        float discount = product4.calculateDiscount();
+        System.out.println("Discount : " + discount);
+        float finalPrice = product4.calculateFinalPrice();
+        System.out.println("Final Price : " + finalPrice);
+        int availableQuantity = product4.calculateAvailableStock();
+        System.out.println("Available Quantity : " + availableQuantity);
 
     }
 }
